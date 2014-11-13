@@ -1,3 +1,19 @@
 omar_site_homepage:
     path:     /hello/{name}
     defaults: { _controller: OmarSiteBundle:Default:index }
+    
+OmarSiteBundle_dealer:
+        resource: "@OmarSiteBundle/Resources/config/routing/dealer.yml"
+        prefix:   /dealer
+
+OmarSiteBundle_deal:
+        resource: "@OmarSiteBundle/Resources/config/routing/deal.yml"
+        prefix:   /deal
+        
+OmarSiteBundle_process:
+        resource: "@OmarSiteBundle/Resources/config/routing/process.yml"
+        prefix:   /process
+
+OmarSiteBundle_avatar:
+        resource: "@OmarSiteBundle/Resources/config/routing/avatar.yml"
+        prefix:   /avatar

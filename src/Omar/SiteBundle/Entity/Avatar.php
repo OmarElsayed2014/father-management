@@ -298,4 +298,8 @@ class Avatar
     {
         return $this->dealers;
     }
+    
+    public function __toString() {
+        return (String) $this->image;
+    }
 }

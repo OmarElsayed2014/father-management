@@ -377,4 +377,8 @@ class Deal
     {
         return $this->processes;
     }
+    
+    public function __toString() {
+        return "Deal";
+    }
 }

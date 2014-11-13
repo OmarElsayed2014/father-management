@@ -1,0 +1,30 @@
+avatar:
+    path:     /
+    defaults: { _controller: "OmarSiteBundle:Avatar:index" }
+
+avatar_show:
+    path:     /{id}/show
+    defaults: { _controller: "OmarSiteBundle:Avatar:show" }
+
+avatar_new:
+    path:     /new
+    defaults: { _controller: "OmarSiteBundle:Avatar:new" }
+
+avatar_create:
+    path:     /create
+    defaults: { _controller: "OmarSiteBundle:Avatar:create" }
+    requirements: { _method: post }
+
+avatar_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "OmarSiteBundle:Avatar:edit" }
+
+avatar_update:
+    path:     /{id}/update
+    defaults: { _controller: "OmarSiteBundle:Avatar:update" }
+    requirements: { _method: post|put }
+
+avatar_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "OmarSiteBundle:Avatar:delete" }
+    requirements: { _method: post|delete }

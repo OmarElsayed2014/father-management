@@ -1,0 +1,64 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Deal</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Startdate</th>
+                <td>{{ entity.startDate|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Absolutetarget</th>
+                <td>{{ entity.absoluteTarget }}</td>
+            </tr>
+            <tr>
+                <th>Profit</th>
+                <td>{{ entity.profit }}</td>
+            </tr>
+            <tr>
+                <th>Profitpercentage</th>
+                <td>{{ entity.profitPercentage }}</td>
+            </tr>
+            <tr>
+                <th>Realtarget</th>
+                <td>{{ entity.realTarget }}</td>
+            </tr>
+            <tr>
+                <th>Enddate</th>
+                <td>{{ entity.endDate|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Expectedenddate</th>
+                <td>{{ entity.expectedEndDate|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Behaviour</th>
+                <td>{{ entity.behaviour }}</td>
+            </tr>
+            <tr>
+                <th>Status</th>
+                <td>{{ entity.status }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('deal') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('deal_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

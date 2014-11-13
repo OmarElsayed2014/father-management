@@ -1,0 +1,30 @@
+deal:
+    path:     /
+    defaults: { _controller: "OmarSiteBundle:Deal:index" }
+
+deal_show:
+    path:     /{id}/show
+    defaults: { _controller: "OmarSiteBundle:Deal:show" }
+
+deal_new:
+    path:     /new
+    defaults: { _controller: "OmarSiteBundle:Deal:new" }
+
+deal_create:
+    path:     /create
+    defaults: { _controller: "OmarSiteBundle:Deal:create" }
+    requirements: { _method: post }
+
+deal_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "OmarSiteBundle:Deal:edit" }
+
+deal_update:
+    path:     /{id}/update
+    defaults: { _controller: "OmarSiteBundle:Deal:update" }
+    requirements: { _method: post|put }
+
+deal_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "OmarSiteBundle:Deal:delete" }
+    requirements: { _method: post|delete }

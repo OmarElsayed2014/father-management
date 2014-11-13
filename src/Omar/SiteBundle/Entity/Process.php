@@ -32,7 +32,7 @@ class Process
      * @var \DateTime
      * @Assert\NotBlank
      * @Assert\DateTime
-     * @ORM\Column(name=": date", type="datetime")
+     * @ORM\Column(name="date", type="datetime")
      */
     private $Date;
 
@@ -62,7 +62,7 @@ class Process
     }
 
     /**
-     * Set :Date
+     * Set Date
      *
      * @param \DateTime $Date
      * @return ØProcess
@@ -151,5 +151,9 @@ class Process
     public function getDeal()
     {
         return $this->deal;
+    }
+    
+    public function __toString() {
+        return (String) "Deal";
     }
 }

@@ -1,0 +1,87 @@
+Symfony2 commands:
+
+You have to initialize the array collections or symfony will require a setter for them
+
+sudo /opt/lampp/bin/php /usr/local/bin/composer self-update
+
+// create project
+composer create-project symfony/framework-standard-edition toysonmove
+
+app/console translation:update en ObjectsSiteBundle --output-format yml --force
+
+build intl countries:
+php vendor/symfony/symfony/src/Symfony/Component/Locale/Resources/data/build-data.php 49
+php vendor/symfony/src/Symfony/Component/Locale/Resources/data/update-data.php 49
+
+//send emails
+app/console swiftmailer:spool:send
+
+//see all the routes
+app/console router:debug
+//install the public folders in bundles into web
+app/console assets:install web
+//clear the cache
+app/console cache:clear
+app/console cache:clear -e prod
+app/console cache:warmup --no-debug -e prod
+php -d memory_limit=-1 app/console cache:warmup --no-debug -e prod
+app/console doctrine:ensure-production-settings --no-debug -e prod
+
+//create bundle
+app/console generate:bundle --namespace=Objects/AdminBundle --format=yml
+
+//generate a form class from entity
+app/console generate:doctrine:form ObjectsUserBundle:User
+
+//generate controller with 5 known actions
+app/console generate:doctrine:crud --entity=ObjectsUserBundle:User --format=yml
+
+Doctrine commands:
+
+//generate an entity class in your bundle (model)
+app/console doctrine:generate:entity --entity="ObjectsSiteBundle:Post" --fields="name:string(255) price:float description:text"
+
+//generates the database schema from the info in the parameters.ini file
+app/console doctrine:database:create
+
+//generate mapping from database
+app/console doctrine:mapping:convert yml ./src/Objects/GazarAPIBundle/Resources/config/doctrine/metadata/orm --from-database --force
+
+//generate entities from the mapping files
+app/console doctrine:mapping:import ObjectsGazarAPIBundle annotation
+
+//Doctrine can automatically create all the database tables needed for every known entity in your application
+app/console doctrine:schema:update --force
+app/console doctrine:schema:update --force --em=papzi
+
+//generate all known entities of class, bundle or an entire namespace
+app/console doctrine:generate:entities ObjectsUserBundle:User
+app/console doctrine:generate:entities ObjectsSiteBundle
+app/console doctrine:generate:entities Objects
+
+//load the fixture files
+app/console doctrine:fixtures:load --append
+app/console doctrine:fixtures:load --append --fixtures src/Objects/adminBundle/DataFixtures/ORM/
+
+//clear the doctrine production cache
+app/console doctrine:cache:clear-metadata --env prod
+app/console doctrine:cache:clear-query --env prod
+app/console doctrine:cache:clear-result --env prod
+
+Notes:
+use \Doctrine\Common\Util\Debug::dump()
+Debug::dump()
+
+
+
+// mongo
+app/console doctrine:mongodb:generate:documents ObjectsMongoDBUserBundle
+app/console doctrine:mongodb:schema:create
+app/console doctrine:mongodb:schema:update
+app/console doctrine:mongodb:fixtures:load --append
+
+
+// sonata
+app/console sonata:admin:generate "Objects\ArticleBundle\Entity\Article" -b "ObjectsAdminBundle"
+
+

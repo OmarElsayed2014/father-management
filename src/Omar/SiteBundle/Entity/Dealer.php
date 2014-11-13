@@ -287,4 +287,8 @@ class Dealer
     {
         return $this->avatar;
     }
+    
+    public function __toString() {
+        return (String) $this->nickname;
+    }
 }

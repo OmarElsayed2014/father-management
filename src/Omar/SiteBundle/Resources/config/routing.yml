@@ -1,0 +1,3 @@
+omar_site_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: OmarSiteBundle:Default:index }

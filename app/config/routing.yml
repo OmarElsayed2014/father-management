@@ -1,4 +1,15 @@
 omar_site:
     resource: "@OmarSiteBundle/Resources/config/routing.yml"
     prefix:   /
+    
+# Login routes
+login_check:
+    path:  /login-check
+
+logout:
+    path:  /logout
+ 
+login:
+    path:     /login
+    defaults: { _controller: OmarSiteBundle:Default:login }
 

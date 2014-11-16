@@ -14,15 +14,18 @@ class DealerType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        
+        $relations = array("mate"=> "زميل في المدرسة", "friend"=> "صديق","father"=> "ولي امر", "other"=> "اخري" );
+        
         $builder
             ->add('name')
             ->add('nickname')
             ->add('address')
             ->add('phone')
             ->add('mobile')
-            ->add('relation')
-            ->add('avatar')
-        ;
+            ->add('relation', "choice" , array( "choices"=> $relations, 'empty_value' => 'اختر من القائمة'))
+            //->add('avatar')
+            ;
     }
     
     /**

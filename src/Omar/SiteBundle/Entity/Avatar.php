@@ -23,7 +23,7 @@ class Avatar
     private $id;
     
     /**
-     * @ORM\OneToMany(targetEntity="\Omar\SiteBundle\Entity\Avatar", mappedBy="avatar", cascade={"persist", "remove"}, orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity="\Omar\SiteBundle\Entity\Dealer", mappedBy="avatar", cascade={"persist", "remove"}, orphanRemoval=true)
      */
     private $dealers;
 

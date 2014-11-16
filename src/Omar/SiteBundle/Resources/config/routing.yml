@@ -1,5 +1,5 @@
 omar_site_homepage:
-    path:     /hello/{name}
+    path:     /
     defaults: { _controller: OmarSiteBundle:Default:index }
     
 OmarSiteBundle_dealer:

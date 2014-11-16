@@ -7,28 +7,22 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>{% block title %} {% endblock %} | إدارة شغل السيد فتحي </title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
-
-    <!-- MetisMenu CSS -->
-    <link href="{{ asset('css/plugins/metisMenu/metisMenu.min.css') }}" rel="stylesheet">
-
-    <!-- Timeline CSS -->
-    <link href="{{ asset('css/plugins/timeline.css') }}" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="{{ asset('css/sb-admin-2.css') }}" rel="stylesheet">
-
-    <!-- Morris Charts CSS -->
-    <link href="{{ asset('css/plugins/morris.css') }}" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="{{ asset('font-awesome-4.1.0/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+    <title>{% block title %} {% endblock %} | إدارة شغل  </title>
     
-    {% block stylesheets %} {% endblock %}
-    
+    {% block stylesheets %}
+        <!-- Bootstrap Core CSS -->
+        <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+
+        <!-- MetisMenu CSS -->
+        <link href="{{ asset('css/plugins/metisMenu/metisMenu.min.css') }}" rel="stylesheet">
+        
+        <!-- Custom CSS -->
+        <link href="{{ asset('css/sb-admin-2.css') }}" rel="stylesheet">
+        
+        <!-- Custom Fonts -->
+        <link href="{{ asset('font-awesome-4.1.0/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+    {% endblock %}
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -303,89 +297,53 @@
                             <a class="active" href="index.html"><i class="fa fa-dashboard fa-fw"></i> الملخص</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>العملاء<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-user fa-fw"></i>العملاء<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="flot.html">اضف عميل جديد</a>
+                                    <a href="{{ path('dealer_new') }}">اضف عميل جديد<i class="fa fa-plus fa-fw"></i></a>
                                 </li>
                                 <li>
-                                    <a href="morris.html">اعرض كل العملاء</a>
+                                    <a href="{{ path('dealer') }}">اعرض كل العملاء<i class="fa fa-table fa-fw"></i></a>
                                 </li>
                                 <li>
-                                    <a href="morris.html">انشط </a>
+                                    <a href="morris.html">انشط <i class="fa fa-bar-chart-o fa-fw"></i></a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
+                        
                         <li>
-                            <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
-                        </li>
-                        <li>
-                            <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-upload fa-fw"></i>الاتفاقات<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="panels-wells.html">Panels and Wells</a>
+                                    <a href="{{ path('deal_new') }}">اضف اتفاق جديد<i class="fa fa-plus fa-fw"></i></a>
                                 </li>
                                 <li>
-                                    <a href="buttons.html">Buttons</a>
+                                    <a href="{{ path('deal') }}">اعرض كل الاتفاقات<i class="fa fa-table fa-fw"></i></a>
                                 </li>
                                 <li>
-                                    <a href="notifications.html">Notifications</a>
-                                </li>
-                                <li>
-                                    <a href="typography.html">Typography</a>
-                                </li>
-                                <li>
-                                    <a href="grid.html">Grid</a>
+                                    <a href="morris.html">انشط الاتفاقات <i class="fa fa-bar-chart-o fa-fw"></i></a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
+                        
                         <li>
-                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-shopping-cart fa-fw"></i>العمليات<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="#">Second Level Item</a>
+                                    <a href="{{ path('process_new') }}">اضف عملية جديد<i class="fa fa-plus fa-fw"></i></a>
                                 </li>
                                 <li>
-                                    <a href="#">Second Level Item</a>
+                                    <a href="{{ path('process') }}">اعرض كل العمليات<i class="fa fa-table fa-fw"></i></a>
                                 </li>
                                 <li>
-                                    <a href="#">Third Level <span class="fa arrow"></span></a>
-                                    <ul class="nav nav-third-level">
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                    </ul>
-                                    <!-- /.nav-third-level -->
+                                    <a href="morris.html">اعلي العمليات<i class="fa fa-bar-chart-o fa-fw"></i></a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
-                        <li>
-                            <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="blank.html">Blank Page</a>
-                                </li>
-                                <li>
-                                    <a href="login.html">Login Page</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
+
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->

@@ -36,7 +36,7 @@ class Dealer
     /**
      * @var string
      * @Assert\Length(max=255)
-     * @ORM\Column(name="name", type="string", length=255)
+     * @ORM\Column(name="name", type="string", length=255, nullable=true)
      */
     private $name;
     
@@ -50,7 +50,7 @@ class Dealer
 
     /**
      * @var string
-     *
+     * @Assert\NotBlank
      * @ORM\Column(name="address", type="text")
      */
     private $address;
@@ -64,6 +64,7 @@ class Dealer
 
     /**
      * @var string
+     * @Assert\NotBlank
      * @Assert\Length(min=7, max=13)
      * @ORM\Column(name="mobile", type="string", length=255)
      */
@@ -71,6 +72,7 @@ class Dealer
 
     /**
      * @var string
+     * @Assert\NotBlank
      * @Assert\Length(max=255)
      * @ORM\Column(name="relation", type="string", length=255)
      */

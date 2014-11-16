@@ -126,7 +126,7 @@ class DealerController extends Controller
 
         return $this->render('OmarSiteBundle:Dealer:edit.html.twig', array(
             'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
+            'form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
     }
@@ -144,8 +144,6 @@ class DealerController extends Controller
             'action' => $this->generateUrl('dealer_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
-
-        $form->add('submit', 'submit', array('label' => 'Update'));
 
         return $form;
     }

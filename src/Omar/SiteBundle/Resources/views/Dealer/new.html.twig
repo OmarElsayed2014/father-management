@@ -24,20 +24,20 @@
                                         <div class="form-group">
                                             <div class="row">
                                                 <div class="col-md-8">
-                                                    <label>الاسم المتداول</label>
+                                                    <label>الاسم المتداول  *</label>
                                                     {{ form_widget(form.nickname, { 'attr' : { 'class': 'form-control', 'placeholder': 'ادخل الاسم المتداول ' } }) }}
                                                     {{ form_errors(form.nickname) }}
                                                     <p class="help-block">ادخل اسما مشهورا به.</p>
                                                 </div>
                                                     <div class="col-md-4">
-                                                        <label>علاقتك بالعميل</label>
+                                                        <label> علاقتك بالعميل*</label>
                                                         {{ form_widget(form.relation, { 'attr' : { 'class': 'form-control' } }) }}
                                                         {{ form_errors(form.relation) }}
                                                     </div>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label>عنوان العميل</label>
+                                            <label>عنوان العميل*</label>
                                             {{ form_widget(form.address, { 'attr' : { 'class': 'form-control', 'rows': '3', 'placeholder': 'ادخل العنوان ' } }) }}
                                             {{ form_errors(form.address) }}
                                         </div>

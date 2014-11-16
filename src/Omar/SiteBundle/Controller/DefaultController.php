@@ -13,7 +13,10 @@ class DefaultController extends Controller
         return $this->render('OmarSiteBundle:Default:index.html.twig');
     }
     
-     /**
+    /**
+     * authenticate memory users that are stored in security.yml
+     * 
+     * @author Omar ELsayed <omarelsayed1992@gmail.com>
      */
     public function loginAction(Request $request)
     {
@@ -29,4 +32,14 @@ class DefaultController extends Controller
             'error'         => $error,
         ));
     }
+    
+    /**
+     * authenticate memory users that are stored in security.yml
+     * 
+     * @author Omar ELsayed <omarelsayed1992@gmail.com>
+     *
+    public function loginAction(Request $request)
+    {
+        
+    }*/
 }

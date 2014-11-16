@@ -2,6 +2,16 @@
 
 {% block title %}Home{% endblock %}
 
+{% block stylesheets %}
+    {{ parent() }}
+    
+    <!-- Timeline CSS -->
+    <link href="{{ asset('css/plugins/timeline.css') }}" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="{{ asset('css/plugins/morris.css') }}" rel="stylesheet">
+{% endblock %}
+
 {% block header %}Dashboard{% endblock %}
 
 {% block body %}
@@ -542,8 +552,9 @@
 
 {% block javascripts %}
     {{ parent() }}
-        <!-- Morris Charts JavaScript -->
-        <script src="{{  asset('js/plugins/morris/raphael.min.js') }}"></script>
-        <script src="{{ asset('js/plugins/morris/morris.min.js') }}"></script>
-        <script src="{{ asset('js/plugins/morris/morris-data.js') }}"></script>
-    {% endblock %}
+    
+    <!-- Morris Charts JavaScript -->
+    <script src="{{ asset('js/plugins/morris/raphael.min.js') }}"></script>
+    <script src="{{ asset('js/plugins/morris/morris.min.js') }}"></script>
+    <script src="{{ asset('js/plugins/morris/morris-data.js') }}"></script>
+{% endblock %}

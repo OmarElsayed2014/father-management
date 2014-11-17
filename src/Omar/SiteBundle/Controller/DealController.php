@@ -66,9 +66,7 @@ class DealController extends Controller
             'action' => $this->generateUrl('deal_create'),
             'method' => 'POST',
         ));
-
-        $form->add('submit', 'submit', array('label' => 'Create'));
-
+        
         return $form;
     }
 

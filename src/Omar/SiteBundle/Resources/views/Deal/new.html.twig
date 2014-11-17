@@ -5,13 +5,123 @@
 {% block header %}اتفاق جديد{% endblock %}
 
 {% block body -%}
-    {{ form(form) }}
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    بيانات الاتفاق
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-6">
+                                {{ form_start(form,{'attr': {'role':'form'} }) }}
+                                
+                                 <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-7">
+                                            <label> اسم العميل*</label>
+                                            {{ form_widget(form.dealer, { 'attr' : { 'class': 'form-control' } }) }}
+                                            {{ form_errors(form.dealer) }}
+                                        </div>
+                                        <div class="col-md-5">
+                                            <input type="button" class="form-control btn btn-warning" value="ابحث عن العميل">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group input-group">
+                                    <span class="input-group-addon">جنيه</span>
+                                    {{ form_widget(form.absoluteTarget, { 'attr' : { 'class': 'form-control', 'placeholder': 'صافي قيمة الشراء' } }) }}
+                                    {{ form_errors(form.absoluteTarget) }}
+                                    <span class="input-group-addon">صافي قيمة الشراء</span>
+                                </div>
+                                    
+                                
+                                    
+                                <div class="form-group">
+                                    <fieldset>
+                                        <legend>طريقة حساب الفائدة</legend>
+                                        
+                                        <label class="radio-inline">
+                                            <input type="radio" name="price-way" id="fixed" value="fixed">قيمة ثابتة
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="price-way" id="percentage" value="percentage">قيمة نسبية
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="price-way" id="total" value="total">مبلغ اجمالي
+                                        </label>
+                                        
+                                        <div class="form-group input-group">
+                                            <div style="display: none;">
+                                                <span class="input-group-addon">جنيه</span>
+                                                {{ form_widget(form.profit, { 'attr' : { 'class': 'form-control', 'placeholder': 'صافي قيمة الشراء' } }) }}
+                                                {{ form_errors(form.profit) }}
+                                                </div>
+                                            <div style="display: none;">
+                                                <span class="input-group-addon">%</span>
+                                                {{ form_widget(form.profitPercentage, { 'attr' : { 'class': 'form-control', 'placeholder': 'صافي قيمة الشراء' } }) }}
+                                                {{ form_errors(form.profitPercentage) }}
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                                    
+                                <div class="form-group input-group">
+                                    <span class="input-group-addon">جنيه</span>
+                                    {{ form_widget(form.realTarget, { 'attr' : { 'class': 'form-control', 'placeholder': 'صافي قيمة الشراء', 'disabled': 'disabled' } }) }}
+                                    {{ form_errors(form.realTarget) }}
+                                    <span class="input-group-addon">حاصل القيمة الاجمالية</span>
+                                </div>
+   
+                                            <div class="form-group">
+                                    <fieldset>
+                                        <legend>طريقة الدفع</legend>
+                                        
+                                        <div class="radio">    
+                                            <label>
+                                                <input type="radio" name="price-way" id="fixed" value="fixed">مبلغ ثابت محدد شهريا
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label>
+                                                <input type="radio" name="price-way" id="percentage" value="percentage">تقسيم المبلغ علي حسب عدد الشهور
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label>
+                                                <input type="radio" name="price-way" id="total" value="total">مبلغ غير ثابت شهريا
+                                            </label>
+                                        </div>
+                                        
+                                        <div class="form-group input-group">
+                                            <span class="input-group-addon">جنيه</span>
+                                            {{ form_widget(form.profit, { 'attr' : { 'class': 'form-control', 'placeholder': 'صافي قيمة الشراء' } }) }}
+                                            {{ form_errors(form.profit) }}
 
-    <ul class="record_actions">
-    <li>
-        <a href="{{ path('deal') }}">
-            Back to the list
-        </a>
-    </li>
-</ul>
+                                            <span class="input-group-addon">%</span>
+                                            {{ form_widget(form.profitPercentage, { 'attr' : { 'class': 'form-control', 'placeholder': 'صافي قيمة الشراء' } }) }}
+                                            {{ form_errors(form.profitPercentage) }}
+                                        </div>
+                                    </fieldset>
+                                </div>
+
+                                <input type="submit" class="btn btn-primary" value="اضف العميل"/>
+                                <a href="{{ path('dealer') }}" class="btn btn-default">ارجع للقائمة</a>
+                            {{ form_end(form) }}
+                            </div>
+                        <!-- /.col-lg-6 (nested) -->
+                        <div class="col-lg-6" style="border-left: 1px dotted lightgrey;">
+                                <i class="fa fa-user fa-5x" style="margin-left: 37%;margin-top: 22%;font-size: 171px;color: cornflowerblue;"></i>                                    
+                        </div>
+                        <!-- /.col-lg-6 (nested) -->
+                    </div>
+                    <!-- /.row (nested) -->
+                </div>
+                <!-- /.panel-body -->
+            </div>
+            <!-- /.panel -->
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
 {% endblock %}

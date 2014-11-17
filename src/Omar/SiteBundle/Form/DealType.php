@@ -20,10 +20,7 @@ class DealType extends AbstractType
             ->add('profit')
             ->add('profitPercentage')
             ->add('realTarget')
-            ->add('endDate')
             ->add('expectedEndDate')
-            ->add('behaviour')
-            ->add('status')
             ->add('dealer')
         ;
     }

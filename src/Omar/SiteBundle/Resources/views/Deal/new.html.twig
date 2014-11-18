@@ -14,69 +14,82 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-lg-6">
-                                {{ form_start(form,{'attr': {'role':'form'} }) }}
-                                
-                                 <div class="form-group">
+                            {{ form_start(form,{'attr': {'role':'form'} }) }}
+
+                                <div class="form-group">
                                     <div class="row">
                                         <div class="col-md-7">
                                             <label> اسم العميل*</label>
                                             {{ form_widget(form.dealer, { 'attr' : { 'class': 'form-control' } }) }}
                                             {{ form_errors(form.dealer) }}
                                         </div>
-                                        <div class="col-md-5">
+                                        <div class="col-md-5" style="margin-top: 25px;">
                                             <input type="button" class="form-control btn btn-warning" value="ابحث عن العميل">
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-group input-group">
-                                    <span class="input-group-addon">جنيه</span>
-                                    {{ form_widget(form.absoluteTarget, { 'attr' : { 'class': 'form-control', 'placeholder': 'صافي قيمة الشراء' } }) }}
-                                    {{ form_errors(form.absoluteTarget) }}
-                                    <span class="input-group-addon">صافي قيمة الشراء</span>
+
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-7">
+                                            <label> تاريخ الاتفاق*</label>
+                                            {{ form_widget(form.startDate) }}
+                                            {{ form_errors(form.startDate) }}
+                                        </div>
+                                    </div>
                                 </div>
-                                    
-                                
-                                    
+
+                                <div class="form-group input-group">
+                                    <div id="price" style="display: table;">
+                                        <span class="input-group-addon">جنيه</span>
+                                        {{ form_widget(form.absoluteTarget, { 'attr' : { 'class': 'form-control', 'placeholder': 'صافي قيمة الشراء' } }) }}
+                                        {{ form_errors(form.absoluteTarget) }}
+                                        <span class="input-group-addon">صافي قيمة الشراء</span>
+                                    </div>
+                                </div>
+
                                 <div class="form-group">
                                     <fieldset>
                                         <legend>طريقة حساب الفائدة</legend>
-                                        
+
                                         <label class="radio-inline">
-                                            <input type="radio" name="price-way" id="fixed" value="fixed">قيمة ثابتة
+                                            <input type="radio" name="calc-way" value="fixed">قيمة ثابتة
                                         </label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="price-way" id="percentage" value="percentage">قيمة نسبية
+                                            <input type="radio" name="calc-way" value="percentage">قيمة نسبية
                                         </label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="price-way" id="total" value="total">مبلغ اجمالي
+                                            <input type="radio" name="calc-way" value="total">مبلغ اجمالي
                                         </label>
-                                        
+                                        <br><br>
                                         <div class="form-group input-group">
-                                            <div style="display: none;">
+                                            <div id="fixed" style="display: table;">
                                                 <span class="input-group-addon">جنيه</span>
-                                                {{ form_widget(form.profit, { 'attr' : { 'class': 'form-control', 'placeholder': 'صافي قيمة الشراء' } }) }}
+                                                {{ form_widget(form.profit, { 'attr' : { 'class': 'form-control', 'placeholder': 'قيمة الربح' } }) }}
                                                 {{ form_errors(form.profit) }}
-                                                </div>
-                                            <div style="display: none;">
+                                            </div>
+                                            <div id="percentage" style="display: table;">
                                                 <span class="input-group-addon">%</span>
-                                                {{ form_widget(form.profitPercentage, { 'attr' : { 'class': 'form-control', 'placeholder': 'صافي قيمة الشراء' } }) }}
+                                                {{ form_widget(form.profitPercentage, { 'attr' : { 'class': 'form-control', 'placeholder': 'نسبة الربح' } }) }}
                                                 {{ form_errors(form.profitPercentage) }}
                                             </div>
                                         </div>
                                     </fieldset>
                                 </div>
-                                    
+
                                 <div class="form-group input-group">
-                                    <span class="input-group-addon">جنيه</span>
-                                    {{ form_widget(form.realTarget, { 'attr' : { 'class': 'form-control', 'placeholder': 'صافي قيمة الشراء', 'disabled': 'disabled' } }) }}
-                                    {{ form_errors(form.realTarget) }}
-                                    <span class="input-group-addon">حاصل القيمة الاجمالية</span>
+                                    <div id="total" style="display: table;">
+                                        <span class="input-group-addon">جنيه</span>
+                                            {{ form_widget(form.realTarget, { 'attr' : { 'class': 'form-control', 'placeholder': 'صافي قيمة الشراء', 'disabled': 'disabled' } }) }}
+                                            {{ form_errors(form.realTarget) }}
+                                        <span class="input-group-addon">حاصل القيمة الاجمالية</span>
+                                    </div>
                                 </div>
-   
-                                            <div class="form-group">
+
+                                <div class="form-group">
                                     <fieldset>
                                         <legend>طريقة الدفع</legend>
-                                        
+
                                         <div class="radio">    
                                             <label>
                                                 <input type="radio" name="price-way" id="fixed" value="fixed">مبلغ ثابت محدد شهريا
@@ -92,26 +105,19 @@
                                                 <input type="radio" name="price-way" id="total" value="total">مبلغ غير ثابت شهريا
                                             </label>
                                         </div>
-                                        
-                                        <div class="form-group input-group">
-                                            <span class="input-group-addon">جنيه</span>
-                                            {{ form_widget(form.profit, { 'attr' : { 'class': 'form-control', 'placeholder': 'صافي قيمة الشراء' } }) }}
-                                            {{ form_errors(form.profit) }}
-
-                                            <span class="input-group-addon">%</span>
-                                            {{ form_widget(form.profitPercentage, { 'attr' : { 'class': 'form-control', 'placeholder': 'صافي قيمة الشراء' } }) }}
-                                            {{ form_errors(form.profitPercentage) }}
-                                        </div>
                                     </fieldset>
                                 </div>
 
                                 <input type="submit" class="btn btn-primary" value="اضف العميل"/>
                                 <a href="{{ path('dealer') }}" class="btn btn-default">ارجع للقائمة</a>
                             {{ form_end(form) }}
-                            </div>
+                        </div>
                         <!-- /.col-lg-6 (nested) -->
+                        
                         <div class="col-lg-6" style="border-left: 1px dotted lightgrey;">
-                                <i class="fa fa-user fa-5x" style="margin-left: 37%;margin-top: 22%;font-size: 171px;color: cornflowerblue;"></i>                                    
+                            <div id="cart-holder">
+                                <i class="fa fa-shopping-cart fa-5x" style="margin-left: 37%;margin-top: 22%;font-size: 171px;color: cornflowerblue;"></i>                                    
+                            </div>
                         </div>
                         <!-- /.col-lg-6 (nested) -->
                     </div>
@@ -125,3 +131,11 @@
     </div>
     <!-- /.row -->
 {% endblock %}
+
+{# ... #}
+{% block javascripts %}
+    {{ parent() }}
+    
+    <script type="text/javascript" src="{{ asset("js/custom/deals.js") }}"></script>
+{% endblock %}
+{# ... #}

@@ -89,22 +89,37 @@
                                 <div class="form-group">
                                     <fieldset>
                                         <legend>طريقة الدفع</legend>
-
-                                        <div class="radio">    
-                                            <label>
-                                                <input type="radio" name="price-way" id="fixed" value="fixed">مبلغ ثابت محدد شهريا
-                                            </label>
+                                        <div class="row">
+                                            <div class="col-md-7">
+                                                <div class="radio">    
+                                                    <label>
+                                                        <input type="radio" name="price-way" id="fixed" value="fixed">مبلغ ثابت محدد شهريا
+                                                    </label>
+                                                </div>
+                                                <div class="radio">
+                                                    <label>
+                                                        <input type="radio" name="price-way" id="percentage" value="percentage">تقسيم المبلغ علي حسب عدد الشهور
+                                                    </label>
+                                                </div>
+                                                <div class="radio">
+                                                    <label>
+                                                        <input type="radio" name="price-way" id="total" value="total">مبلغ غير ثابت شهريا
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <div id="monthly">
+                                                    <input type="text" class="form-control" placeholder="00" style="height: 91px;font-size: 48px;text-align: center;border-bottom: 0;border-bottom-right-radius: 0;border-bottom-left-radius: 0;">
+                                                    <span class="input-group-addon" style="border-left: 1px solid #ccc;border-bottom-left-radius: 4px;border-top-right-radius: 0;">شهرا</span>
+                                                </div>
+                                                
+                                                <div id="poundly">
+                                                    <input type="text" class="form-control" placeholder="0.00" style="height: 91px;font-size: 48px;text-align: center;border-bottom: 0;border-bottom-right-radius: 0;border-bottom-left-radius: 0;">
+                                                    <span class="input-group-addon" style="border-left: 1px solid #ccc;border-bottom-left-radius: 4px;border-top-right-radius: 0;">جنيها</span>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="radio">
-                                            <label>
-                                                <input type="radio" name="price-way" id="percentage" value="percentage">تقسيم المبلغ علي حسب عدد الشهور
-                                            </label>
-                                        </div>
-                                        <div class="radio">
-                                            <label>
-                                                <input type="radio" name="price-way" id="total" value="total">مبلغ غير ثابت شهريا
-                                            </label>
-                                        </div>
+                                        
                                     </fieldset>
                                 </div>
 
@@ -117,6 +132,9 @@
                         <div class="col-lg-6" style="border-left: 1px dotted lightgrey;">
                             <div id="cart-holder">
                                 <i class="fa fa-shopping-cart fa-5x" style="margin-left: 37%;margin-top: 22%;font-size: 171px;color: cornflowerblue;"></i>                                    
+                            </div>
+                            <div id="cart-holder-area" style="font-size: 28px;text-align: center;">
+                                انقر هنا لمعرفة تفاصيل الدفع
                             </div>
                         </div>
                         <!-- /.col-lg-6 (nested) -->
